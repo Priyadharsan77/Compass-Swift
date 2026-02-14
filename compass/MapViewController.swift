@@ -117,5 +117,3 @@ func postData(longitude: Double, latitude: Double, pinId: String){
 
     task.resume()
 }
-
-
