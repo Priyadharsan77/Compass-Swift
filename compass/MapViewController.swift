@@ -46,7 +46,7 @@ class MapViewController: UIViewController {
     delegate.update(location: CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude))
         
         // GET ALL PINS
-        let urlget = URL(string: "http://192.168.2.90:5000/api/v1/pins")!
+        let urlget = URL(string: "http://localhost:5000/api/v1/pins")!
 
         let taskget = URLSession.shared.dataTask(with: urlget) {(data, response, error) in
             guard let data = data else { return }
@@ -96,7 +96,7 @@ func postData(longitude: Double, latitude: Double, pinId: String){
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
     // create post request
-    let url = URL(string: "http://192.168.2.90:5000/api/v1/pins")!
+    let url = URL(string: "http://localhost:5000/api/v1/pins")!
     var request = URLRequest(url: url)
     request.httpMethod = "POST"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -117,5 +117,3 @@ func postData(longitude: Double, latitude: Double, pinId: String){
 
     task.resume()
 }
-
-
