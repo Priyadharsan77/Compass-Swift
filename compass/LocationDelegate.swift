@@ -32,7 +32,7 @@ class LocationDelegate: NSObject, CLLocationManagerDelegate {
     let jsonData = try? JSONSerialization.data(withJSONObject: json)
 
     // create post request
-    let url = URL(string: "http://localhost:5000/api/v1/user")!
+    let url = URL(string: "http://localhost:3000/api/v1/user")!
     var request = URLRequest(url: url)
     request.httpMethod = "PUT"
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
